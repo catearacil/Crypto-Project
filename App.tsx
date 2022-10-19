@@ -4,6 +4,7 @@ import {
   ScrollView,
   StatusBar,
   StyleSheet,
+  Image,
   Text,
   useColorScheme,
   View,
@@ -27,8 +28,25 @@ const App = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name='CryptoTraker Pro' component={CryptoList} />
-        <Stack.Screen name='AddCrypto' component={AddCrypto} />
+        <Stack.Screen 
+          name='CryptoTraker Pro' 
+          component={CryptoList}
+          options={{headerShown: false}}
+          />
+        <Stack.Screen 
+          name='AddCrypto' 
+          component={AddCrypto}
+          options={
+            {
+              title: 'Back to list',
+              headerBackTitle:"Back to list",
+              headerTitleStyle:{
+                color:'#385775'
+              }
+            }
+          }
+            
+          />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -1,92 +1,70 @@
-import { View, Text, SafeAreaView, FlatList, StyleSheet, TouchableHighlight, Image, Button, TouchableOpacity } from 'react-native'
-import { OpenModalText, NamesContainer, Name, Symbol, Logo } from './style';
-import React from 'react'
+import {SafeAreaView, TouchableOpacity} from 'react-native';
+import {AddCrypto, List} from './cryptoStyle';
+import CryptoItem from '../../components/cryptoItem/CryptoItem';
+import React from 'react';
+import {useNavigation} from '@react-navigation/native';
+import Header from '../../components/header/Header';
 
 const crypto = [
   {
-    id: 'BCT',
+    id: '1',
     symbol: 'BCT',
     name: 'Bitcoin',
-    price_usd: '1.234',
-    percent_change_usd_last_24_hours: '1.82',
     img: require('../../assets/Bitcoin.png'),
+    slug: 'bitcoin',
+    market_data: {
+      price_usd: 7215.68,
+      percent_change_usd_last_24_hours: 1.82,
+    },
   },
   {
-    id: 'ETH',
+    id: '2',
     symbol: 'ETH',
     name: 'Ethereum',
-    price_usd: '1.485',
-    percent_change_usd_last_24_hours: '1.46',
     img: require('../../assets/Ethereum.png'),
+    slug: 'ethereum',
+    market_data: {
+      price_usd: 146.83,
+      percent_change_usd_last_24_hours: 1.46,
+    },
   },
   {
-    id: 'XRP',
+    id: '3',
     symbol: 'XRP',
     name: 'XRP',
-    price_usd: '0.923',
-    percent_change_usd_last_24_hours: '2.47',
+    slug: 'xrp',
     img: require('../../assets/XRP.png'),
+    market_data: {
+      price_usd: 0.220568,
+      percent_change_usd_last_24_hours: -2.47,
+    },
   },
-
-]
-
-const styles = StyleSheet.create({
-  container: {
-    paddingHorizontal: 24,
-    marginTop: 32
-  },
-  stretch: {
-    width: 55,
-    height: 55,
-    borderRadius: 100 / 2,
-    resizeMode: 'stretch',
-  },
-});
-
-const AddCrypto = () => { };
+];
 
 const CryptoList = () => {
+  const navigation = useNavigation();
 
   return (
-    <SafeAreaView>
-      <FlatList
-        data={crypto}
-        keyExtractor={(item) => item.name}
-        renderItem={({ item, index, separators }) => {
+    <SafeAreaView style={{backgroundColor: '#fff', height: '100%'}}>
+      <Header />
+      <List>
+        {crypto.map(item => (
+          <CryptoItem key={item.id} {...item} />
+        ))}
+      </List>
 
-          return (
-
-            <TouchableHighlight
-              key={item.name}
-              onShowUnderlay={separators.highlight}
-              onHideUnderlay={separators.unhighlight}
-            >
-              <View >
-                <Logo source={item.img} />
-                <NamesContainer>
-                  <Name>{item.name}</Name>
-                  <Symbol>{item.symbol}</Symbol>
-                </NamesContainer>
-                {/* <Image
-                  style={styles.stretch}
-                  source={item.img}
-                /> */}
-              </View>
-            </TouchableHighlight>
-          );
-        }}
-      />
-      {<TouchableOpacity
-        onPress={() =>
-          AddCrypto()
-        }>
-        <OpenModalText>
-          + Add CryptoCurrencies
-        </OpenModalText>
-      </TouchableOpacity>}
+      {
+        <TouchableOpacity
+          onPress={() =>
+            //@ts-ignore
+            navigation.navigate('AddCrypto')
+          }
+          style={{width: '100%'}}>
+          <AddCrypto>+ Add a Cryptocurrency</AddCrypto>
+        </TouchableOpacity>
+      }
     </SafeAreaView>
-  )
+  );
+};
 
-}
-
-export default CryptoList
+export default CryptoList;
