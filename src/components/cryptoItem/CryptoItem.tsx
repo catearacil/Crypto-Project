@@ -19,7 +19,6 @@ const IncrementArrow = require('../../assets/increaseArrow.png');
 
 import {Crypto} from '../../interfaces/cryptoInterface';
 const CryptoItem = ({id, name, symbol, img, market_data}: Crypto) => {
-
   return (
     <View>
       <Contener>
