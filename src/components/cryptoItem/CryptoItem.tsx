@@ -19,9 +19,7 @@ const IncrementArrow = require('../../assets/increaseArrow.png');
 
 import {Crypto} from '../../interfaces/cryptoInterface';
 const CryptoItem = ({id, name, symbol, img, slug, market_data}: Crypto) => {
-  const percent = market_data.percent_change_usd_last_24_hours;
-  const price = market_data.price_usd;
-
+ 
   return (
     <View>
       <Contener>
@@ -31,10 +29,19 @@ const CryptoItem = ({id, name, symbol, img, slug, market_data}: Crypto) => {
           <Symbol>{symbol}</Symbol>
         </NamesContainer>
         <ValueContener>
-          <Value>${price}</Value>
+          <Value>${market_data.price_usd}</Value>
           <ArrowCont>
-            <ImgeValue source={percent < 0 ? decreaseArrow : IncrementArrow} />
-            <Percent Porcent={percent}>{Math.abs(percent as number)}%</Percent>
+            <ImgeValue
+              source={
+                market_data.percent_change_usd_last_24_hours < 0
+                  ? decreaseArrow
+                  : IncrementArrow
+              }
+            />
+            <Percent Porcent={market_data.percent_change_usd_last_24_hours}>
+              {Math.abs(market_data.percent_change_usd_last_24_hours as number)}
+              %
+            </Percent>
           </ArrowCont>
         </ValueContener>
       </Contener>
