@@ -7,8 +7,8 @@ export const Contener = styled.FlatList`
 `;
 
 export const List = styled.View`
-  margin-left: 12px;
-  margin-right: 12px;
+  margin-left: 23px;
+  margin-right: 25px;
 `;
 
 export const AddCrypto = styled.Text`
