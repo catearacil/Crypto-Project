@@ -18,7 +18,7 @@ const decreaseArrow = require('../../assets/decreaseArrow.png');
 const IncrementArrow = require('../../assets/increaseArrow.png');
 
 import {Crypto} from '../../interfaces/cryptoInterface';
-const CryptoItem = ({id, name, symbol, img, slug, market_data}: Crypto) => {
+const CryptoItem = ({id, name, symbol, img, market_data}: Crypto) => {
  
   return (
     <View>
