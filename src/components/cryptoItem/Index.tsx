@@ -5,7 +5,7 @@ import {
   Symbol,
   Separator,
   Logo,
-  ImgeValue,
+  ImageValue,
   Value,
   Percent,
   ValueContainer,
@@ -41,7 +41,7 @@ const CryptoItem: FC<Props> = ({
     <ValueContainer>
       <Value>${market_data?.price_usd}</Value>
       <ArrowContainer>
-        <ImgeValue
+        <ImageValue
           source={
             market_data?.percent_change_usd_last_24_hours < 0
               ? decreaseArrow

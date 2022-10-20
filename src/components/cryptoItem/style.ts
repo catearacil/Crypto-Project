@@ -2,7 +2,7 @@ import styled from 'styled-components/native';
 import theme from '../../utils/theme';
 
 export const Container = styled.View`
-  padding-top:28px;
+  padding-top: 28px;
   padding-bottom: 10px;
   display: flex;
   flex-direction: row;
@@ -23,7 +23,7 @@ export const LogoContainer = styled.View`
   flex-direction: row;
 `;
 export const NamesContainer = styled.View`
-  padding-left:5px;
+  padding-left: 5px;
   display: flex;
   flex-direction: column;
 `;
@@ -53,7 +53,6 @@ export const Value = styled.Text`
   font-weight: 500;
   color: ${theme.colors.black};
   text-align: right;
-  
 `;
 export const ArrowContainer = styled.View`
   display: flex;
@@ -63,7 +62,7 @@ export const ArrowContainer = styled.View`
   flex-direction: row;
 `;
 
-export const ImgeValue = styled.Image`
+export const ImageValue = styled.Image`
   width: 10px;
   height: 10px;
   margin-right: 4px;
