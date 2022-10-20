@@ -1,10 +1,5 @@
-import {SafeAreaView, TouchableOpacity, FlatList, View} from 'react-native';
-import {
-  AddCrypto,
-  List as List,
-  Container,
-  ContainerFlatList,
-} from './style';
+import {TouchableOpacity, FlatList} from 'react-native';
+import {AddCrypto, Container, ContainerFlatList} from './style';
 import CryptoItem from '../../components/cryptoItem/Index';
 import React from 'react';
 import {useNavigation} from '@react-navigation/native';
@@ -55,21 +50,11 @@ const CryptoList = () => {
   return (
     <Container>
       <Header />
-
       <ContainerFlatList>
         <FlatList
           data={crypto}
           keyExtractor={item => item.id}
-          renderItem={({item, index, separators}) => {
-            return (
-              <List
-                key={item.id}
-                onShowUnderlay={separators.highlight}
-                onHideUnderlay={separators.unhighlight}>
-                <CryptoItem crypto={item} />
-              </List>
-            );
-          }}
+          renderItem={({item}) => <CryptoItem crypto={item} />}
         />
       </ContainerFlatList>
       <TouchableOpacity onPress={() => navigate('AddCrypto')}>

@@ -1,18 +1,15 @@
 import styled from 'styled-components/native';
 import theme from '../../utils/theme';
 
-export const List = styled.TouchableHighlight`
-  background-color: ${theme.colors.white};
-  margin-left: 23px;
-  margin-right: 25px;
-`;
-
 export const Container = styled.SafeAreaView`
   background-color: ${theme.colors.white};
   height: 100%;
 `;
 
 export const ContainerFlatList = styled.View`
+background-color: ${theme.colors.white};
+  margin-left: 23px;
+  margin-right: 25px;
   height: auto;
   max-height: 90%;
 `;
