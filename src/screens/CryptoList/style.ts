@@ -14,7 +14,7 @@ background-color: ${theme.colors.white};
   max-height: 90%;
 `;
 
-export const AddCrypto = styled.Text`
+export const BlueText = styled.Text`
   margin-top: 50px;
   font-size: 18px;
   line-height: 24px;
