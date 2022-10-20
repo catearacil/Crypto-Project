@@ -1,22 +1,29 @@
-//@ts-ignore
+
 import styled from 'styled-components/native';
-import {colors} from '../../components/utils/colors';
+import theme from '../../components/utils/theme';
 
-export const Contener = styled.FlatList`
-  background-color: ${colors.white};
-`;
-
-export const List = styled.View`
+export const List = styled.TouchableHighlight`
+background-color: ${theme.colors.white};
   margin-left: 23px;
   margin-right: 25px;
 `;
+
+export const Container = styled.SafeAreaView`
+  background-color: ${theme.colors.white};
+  height: 100%
+`;
+
+export const ContainerFlatList = styled.View`
+  height: auto;
+  max-height: 90%;
+`
 
 export const AddCrypto = styled.Text`
   margin-top: 50px;
   font-size: 18px;
   line-height: 24px;
-  background-color: ${colors.blue};
-  color: ${colors.bluegray};
+  background-color: ${theme.colors.blue};
+  color: ${theme.colors.blueGray};
   text-align: center;
   font-family: Inter;
 `;
@@ -25,7 +32,7 @@ export const OpenModalText = styled.Text`
   margin-top: 49px;
   font-size: 19px;
   line-height: 24px;
-  color: ${colors.bluegray};
+  color: ${theme.colors.blueGray};
   text-align: center;
   font-family: Inter;
 `;
@@ -46,12 +53,12 @@ export const NamesContainer = styled.View`
 `;
 
 export const Name = styled.Text`
-  color: ${colors.black};
+  color: ${theme.colors.black};
   font-size: 16px;
 `;
 
 export const Symbol = styled.Text`
-  color: ${colors.gray};
+  color: ${theme.colors.gray};
   font-size: 14px;
 `;
 
@@ -66,7 +73,7 @@ export const Logo = styled.Image`
 export const Value = styled.Text`
   position: relative;
   font-size: 16px;
-  color: ${colors.gray};
+  color: ${theme.colors.gray};
   text-align: right;
   bottom: 55%;
 `;
@@ -74,7 +81,7 @@ export const Value = styled.Text`
 export const Increase = styled.Text`
   position: relative;
   font-size: 14px;
-  color: ${colors.green};
+  color: ${theme.colors.green};
   left: 65%;
   bottom: 55%;
 `;
@@ -82,7 +89,7 @@ export const Increase = styled.Text`
 export const Decrease = styled.Text`
   position: relative;
   font-size: 14px;
-  color: ${colors.red};
+  color: ${theme.colors.red};
   left: 65%;
   bottom: 55%;
 `;

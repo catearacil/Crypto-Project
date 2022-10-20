@@ -1,4 +1,4 @@
-import {Head, ImageStyle, Title} from './headerStyle';
+import {Head, ImageStyle, Title} from './style';
 import React from 'react';
 
 const Header = () => {

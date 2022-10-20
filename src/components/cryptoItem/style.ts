@@ -1,26 +1,26 @@
-//@ts-ignore
 import styled from 'styled-components/native';
-import {colors} from '../utils/colors';
+import theme from '../utils/theme';
 
-export const Contener = styled.View`
+export const Container = styled.View`
   padding-top: 7px;
   padding-bottom: 8px;
   display: flex;
+  border-bottom-color: ${theme.colors.black};
 `;
 
-export const Separador = styled.View`
+export const Separator = styled.View`
   height: 1px;
   width: 100%;
   margin-top: 11px;
-  background-color: ${colors.dividergray};
+  background-color: ${theme.colors.dividerGray};
 `;
 
 export const OneCrypto = styled.View`
   width: 88%;
   height: 100px;
   margin-bottom: 10px;
-  border-bottom: 0.2px;
-  border-bottom-color: ${colors.dividergray};
+  border-bottom: 1px;
+  border-bottom-color: ${theme.colors.dividerGray};
   display: flex;
   align-self: center;
 `;
@@ -33,13 +33,13 @@ export const NamesContainer = styled.View`
 `;
 
 export const Name = styled.Text`
-  color: ${colors.black};
+  color: ${theme.colors.black};
   font-size: 17px;
   font-weight: 500;
 `;
 
 export const Symbol = styled.Text`
-  color: ${colors.gray};
+  color: ${theme.colors.gray};
   font-size: 15px;
 `;
 
@@ -51,7 +51,7 @@ export const Logo = styled.Image`
   top: 30px;
 `;
 
-export const ValueContener = styled.View`
+export const ValueContainer = styled.View`
   display: flex;
   flex-direction: column;
   text-align: right;
@@ -61,7 +61,7 @@ export const ValueContener = styled.View`
 export const Value = styled.Text`
   font-size: 19px;
   font-weight: 500;
-  color: ${colors.black};
+  color: ${theme.colors.black};
   text-align: right;
 `;
 export const ArrowCont = styled.View`
@@ -81,5 +81,5 @@ export const ImgeValue = styled.Image`
 
 export const Percent = styled.Text`
   font-size: 16px;
-  color: ${(p: any) => (p.Porcent < 0 ? 'red' : 'green')};
+  color: ${({Percent}: {Percent: boolean}) => (Percent ? 'red' : 'green')};
 `;
