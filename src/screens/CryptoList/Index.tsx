@@ -66,7 +66,7 @@ const CryptoList = () => {
                 key={item.id}
                 onShowUnderlay={separators.highlight}
                 onHideUnderlay={separators.unhighlight}>
-                <CryptoItem key={item.id} {...item} />
+                <CryptoItem crypto={item} />
               </List>
             );
           }}

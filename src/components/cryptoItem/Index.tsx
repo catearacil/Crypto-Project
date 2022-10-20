@@ -9,7 +9,7 @@ import {
   Value,
   Percent,
   ValueContainer,
-  ArrowCont,
+  ArrowContainer,
 } from './style';
 
 import React, {FC} from 'react';
@@ -18,7 +18,11 @@ import IncrementArrow from '../../assets/increaseArrow.png';
 
 import {Crypto} from '../../interfaces/Index';
 
-const CryptoItem: FC<Crypto> = ({id, name, symbol, img, market_data}) => (
+interface Props {
+  crypto: Crypto;
+}
+
+const CryptoItem: FC<Props> = ({crypto: {id, name, symbol, img, market_data}}) => (
   <Container>
     <Logo source={img} />
     <NamesContainer>
@@ -26,19 +30,19 @@ const CryptoItem: FC<Crypto> = ({id, name, symbol, img, market_data}) => (
       <Symbol>{symbol}</Symbol>
     </NamesContainer>
     <ValueContainer>
-      <Value>${market_data.price_usd}</Value>
-      <ArrowCont>
+      <Value>${market_data?.price_usd}</Value>
+      <ArrowContainer>
         <ImgeValue
           source={
-            market_data.percent_change_usd_last_24_hours < 0
+            market_data?.percent_change_usd_last_24_hours < 0
               ? decreaseArrow
               : IncrementArrow
           }
         />
-        <Percent Percent={market_data.percent_change_usd_last_24_hours < 0}>
-          {Math.abs(market_data.percent_change_usd_last_24_hours as number)}%
+        <Percent percent={market_data?.percent_change_usd_last_24_hours < 0}>
+          {Math.abs(market_data?.percent_change_usd_last_24_hours as number)}%
         </Percent>
-      </ArrowCont>
+      </ArrowContainer>
     </ValueContainer>
     <Separator />
   </Container>

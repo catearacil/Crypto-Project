@@ -3,7 +3,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import CryptoList from './src/screens/CryptoList/Index';
 import AddCrypto from './src/screens/AddCrypto/Index';
 import {NavigationContainer} from '@react-navigation/native';
-import theme from './src/components/utils/theme';
+import theme from './src/utils/theme';
 
 const Stack = createNativeStackNavigator();
 

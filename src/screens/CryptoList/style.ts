@@ -1,22 +1,21 @@
-
 import styled from 'styled-components/native';
-import theme from '../../components/utils/theme';
+import theme from '../../utils/theme';
 
 export const List = styled.TouchableHighlight`
-background-color: ${theme.colors.white};
+  background-color: ${theme.colors.white};
   margin-left: 23px;
   margin-right: 25px;
 `;
 
 export const Container = styled.SafeAreaView`
   background-color: ${theme.colors.white};
-  height: 100%
+  height: 100%;
 `;
 
 export const ContainerFlatList = styled.View`
   height: auto;
   max-height: 90%;
-`
+`;
 
 export const AddCrypto = styled.Text`
   margin-top: 50px;
@@ -94,7 +93,7 @@ export const Decrease = styled.Text`
   bottom: 55%;
 `;
 
-export const ArrowCont = styled.View`
+export const ArrowContainer = styled.View`
   position: absolute;
   right: 7%;
   top: 60%;

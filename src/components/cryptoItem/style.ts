@@ -1,5 +1,5 @@
 import styled from 'styled-components/native';
-import theme from '../utils/theme';
+import theme from '../../utils/theme';
 
 export const Container = styled.View`
   padding-top: 7px;
@@ -64,7 +64,7 @@ export const Value = styled.Text`
   color: ${theme.colors.black};
   text-align: right;
 `;
-export const ArrowCont = styled.View`
+export const ArrowContainer = styled.View`
   display: flex;
   text-align: center;
   justify-content: flex-end;
@@ -81,5 +81,5 @@ export const ImgeValue = styled.Image`
 
 export const Percent = styled.Text`
   font-size: 16px;
-  color: ${({Percent}: {Percent: boolean}) => (Percent ? 'red' : 'green')};
+  color: ${({percent}: {percent: boolean}) => (percent ? 'red' : 'green')};
 `;
