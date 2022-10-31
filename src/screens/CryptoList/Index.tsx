@@ -21,7 +21,7 @@ const CryptoList = () => {
   );
 
   useEffect(() => {
-    dispatch(getCrypto());
+    dispatch(getCrypto('bitcoin'));
   }, []);
 
   return (
@@ -30,7 +30,7 @@ const CryptoList = () => {
       <ContainerFlatList>
         <FlatList
           data={cryptos}
-          keyExtractor={item => item.id}
+          keyExtractor={item => item?.id}
           renderItem={({item}) => <CryptoItem crypto={item} />}
           ListFooterComponent={
             <TouchableOpacity onPress={() => navigate('AddCrypto')}>

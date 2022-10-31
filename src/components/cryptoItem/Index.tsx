@@ -23,9 +23,10 @@ interface Props {
   crypto: Crypto;
 }
 
-const numberFormatter = Intl.NumberFormat('en-US');
+const numberFormatter = Intl.NumberFormat('en-US'); 
 
-const CryptoItem: FC<Props> = ({crypto: {id, name, symbol, market_data}}) => (
+const CryptoItem: FC<Props> = ({crypto: {id, name, symbol, market_data}}) => ( 
+
   <>
     <Container>
       <LogoContainer>
@@ -38,7 +39,7 @@ const CryptoItem: FC<Props> = ({crypto: {id, name, symbol, market_data}}) => (
 
       <ValueContainer>
         <Value>
-          ${numberFormatter.format(market_data.price_usd.toFixed(2))}
+          ${numberFormatter.format(market_data?.price_usd.toFixed(2))}
         </Value>
         <ArrowContainer>
           <ImageValue
