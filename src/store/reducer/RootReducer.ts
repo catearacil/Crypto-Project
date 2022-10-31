@@ -7,7 +7,7 @@ const initialState = {
   loading: false,
 };
 
-type key = 'id' | 'slug' | 'symbol' | 'market_data';
+type key = 'id' | 'slug' | 'symbol' | 'market_data' | 'img';
 
 export const getCrypto = createAsyncThunk(
   'crypto/getCrypto',

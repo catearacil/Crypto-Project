@@ -25,13 +25,11 @@ interface Props {
 
 const numberFormatter = Intl.NumberFormat('en-US');
 
-const CryptoItem: FC<Props> = ({
-  crypto: {id, name, symbol, img, market_data},
-}) => (
+const CryptoItem: FC<Props> = ({crypto: {id, name, symbol, market_data}}) => (
   <>
     <Container>
       <LogoContainer>
-        <Logo source={img} />
+        <Logo source={{uri: `https://messari.io/asset-images/${id}/128.png`}} />
         <NamesContainer>
           <Name>{name}</Name>
           <Symbol>{symbol}</Symbol>
