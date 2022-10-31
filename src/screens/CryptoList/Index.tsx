@@ -5,8 +5,6 @@ import React from 'react';
 import {useNavigation} from '@react-navigation/native';
 import Header from '../../components/header/Index';
 import {useDispatch, useSelector} from 'react-redux';
-import {useEffect} from 'react';
-import {getCrypto} from '../../store/reducer/RootReducer';
 import {AppDispatch, RootState} from '../../store/index';
 
 type Nav = {
@@ -19,10 +17,6 @@ const CryptoList = () => {
   const cryptos = useSelector(
     (state: RootState) => state.selectedCrypto.cryptos,
   );
-
-  useEffect(() => {
-    dispatch(getCrypto('bitcoin'));
-  }, []);
 
   return (
     <Container>

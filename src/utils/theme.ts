@@ -10,6 +10,9 @@ const theme = {
     blueGray: '#385775',
     darkBlue: '#A8D5V3',
     dividerGray: '#E5E9EC',
+    yellow: 'rgb(251, 210, 77)',
+    darkGray: '#1F1F1F',
+    borderGray: '#B5B9BC',
   },
 };
 

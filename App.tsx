@@ -14,20 +14,14 @@ const App = () => (
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen
-          name="CryptoTraker Pro"
+          name="CryptoList"
           component={CryptoList}
           options={{headerShown: false}}
         />
         <Stack.Screen
           name="AddCrypto"
           component={AddCrypto}
-          options={{
-            title: 'Back to list',
-            headerBackTitle: 'Back to list',
-            headerTitleStyle: {
-              color: theme.colors.blueGray,
-            },
-          }}
+          options={{headerShown: false}}
         />
       </Stack.Navigator>
     </NavigationContainer>
