@@ -15,7 +15,7 @@ export const CryptoInput = styled.TextInput`
   borderRadius: 6px;
   paddingLeft: 10px;
   fontSize: 17px;
-  backgroundColor:#f1f1f154;
+  
   
 `;
 
