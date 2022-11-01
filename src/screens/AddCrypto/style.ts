@@ -15,7 +15,6 @@ export const CryptoInput = styled.TextInput`
   border-radius: 6px;
   padding-left: 10px;
   font-size: 17px;
-  background-color: #f1f1f154;
 `;
 
 export const AddText = styled.Text`
