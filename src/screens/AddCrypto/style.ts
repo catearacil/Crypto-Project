@@ -66,3 +66,4 @@ export const Touchable = styled.TouchableOpacity`
   left: 54%;
   top: 28%;
 `;
+
