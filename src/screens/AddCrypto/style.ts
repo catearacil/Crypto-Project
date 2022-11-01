@@ -2,7 +2,7 @@ import styled from 'styled-components/native';
 import theme from '../../utils/theme';
 
 export const Container= styled.View`
-  display:flex;
+  display: flex;
 `
 
 export const CryptoInput = styled.TextInput`
@@ -44,14 +44,14 @@ export const OpenModalText = styled.Text`
   fontSize: 17px;
   lineHeight: 24px;
   color: ${theme.colors.white};
-  textAlign:center;
+  textAlign: center;
   fontFamily: Inter;
 `;
 
 export const ModalText = styled.Text`
   fontSize: 18px;
   color: ${theme.colors.gray};
-  backgroundColor:${theme.colors.yellow};
+  backgroundColor: ${theme.colors.yellow};
   textAlign: center;
   textAlignVertical: center;
   width: 160px;
