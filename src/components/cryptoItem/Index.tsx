@@ -23,10 +23,9 @@ interface Props {
   crypto: Crypto;
 }
 
-const numberFormatter = Intl.NumberFormat('en-US'); 
+const numberFormatter = Intl.NumberFormat('en-US');
 
-const CryptoItem: FC<Props> = ({crypto: {id, name, symbol, market_data}}) => ( 
-
+const CryptoItem: FC<Props> = ({crypto: {id, name, symbol, market_data}}) => (
   <>
     <Container>
       <LogoContainer>

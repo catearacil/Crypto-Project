@@ -20,6 +20,21 @@ export const getCrypto = createAsyncThunk(
   },
 );
 
+export const updateCrypto = createAsyncThunk(
+  'crypto/updateCrypto',
+  async (name: string[]) => {
+    let value: Crypto[] = [];
+    for (let i = 0; i < name.length; i++) {
+      let response = await fetch(
+        `${process.env.REACT_APP_BASE_URL}${name[i]}/metrics`,
+      );
+      value.push((await response.json()).data);
+    }
+
+    return value;
+  },
+);
+
 const cryptoSlice = createSlice({
   name: 'crypto',
   initialState,
@@ -35,6 +50,9 @@ const cryptoSlice = createSlice({
       })
       .addCase(getCrypto.rejected, state => {
         state.loading = false;
+      })
+      .addCase(updateCrypto.fulfilled, (state, action) => {
+        state.cryptos = action.payload;
       });
   },
 });
