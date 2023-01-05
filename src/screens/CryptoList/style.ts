@@ -7,7 +7,7 @@ export const Container = styled.SafeAreaView`
 `;
 
 export const ContainerFlatList = styled.View`
-  background-color: ${theme.colors.white};
+background-color: ${theme.colors.white};
   margin-left: 23px;
   margin-right: 25px;
   height: auto;
